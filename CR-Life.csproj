@@ -60,6 +60,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="After\Cell.cs" />
+    <Compile Include="After\Game.cs" />
+    <Compile Include="After\Helpers\MapHelper.cs" />
+    <Compile Include="After\Helpers\Shape.cs" />
+    <Compile Include="After\Program.cs" />
+    <Compile Include="After\Renderer\ConsoleRenderer.cs" />
+    <Compile Include="After\Renderer\IRenderer.cs" />
+    <Compile Include="After\Renderer\TextStreamRenderer.cs" />
+    <Compile Include="After\Tests\Game_Should.cs" />
+    <Compile Include="After\Tests\Cell_Should.cs" />
+    <Compile Include="After\Map.cs" />
+    <Compile Include="After\Tests\Map_Should.cs" />
     <Compile Include="Session 1\Game.cs" />
     <Compile Include="Session 1\Game_Should.cs" />
     <Compile Include="Session 1\Map.cs" />
@@ -92,6 +104,7 @@
     <Compile Include="Session 5\Cell.cs" />
     <Compile Include="Session 5\Game.cs" />
     <Compile Include="Session 5\Map.cs" />
+    <Compile Include="Session 5\Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
