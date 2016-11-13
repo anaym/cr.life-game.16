@@ -1,0 +1,1 @@
+﻿Anti FP: functions shouldn`t return values :). Immutable. TDD

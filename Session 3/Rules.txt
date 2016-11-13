@@ -1,0 +1,1 @@
+﻿No wile/for/foreach. FP (clean functions). Immutable. TDD
