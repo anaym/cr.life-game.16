@@ -8,19 +8,21 @@ namespace CR_Life.After
     {
         public static void Main()
         {
-            var map = Shape.Glider.InsertTo(new Map(), new Cell(0, 0));
+            var map = Shape.Glider.InsertTo(new Map(), new Cell(-20, 20));
 
             var game = new Game(map);
 
-            var renderer = new ConsoleRenderer(new Cell(-20, -20), new Cell(20, 20));
-            renderer.DeadChar = ' ';
+            var renderer = new ConsoleRenderer(new Cell(-20, -20), new Cell(20, 20))
+            {
+                AliveChar = 'O',
+                DeadChar = '-'
+            };
 
+            Console.CursorVisible = false;
             while (true)
             {
-                Console.Clear();
-                Thread.Sleep(1);
+                Console.SetCursorPosition(0, 0);
                 renderer.Render(game.CurrentMap);
-                renderer.Writer.Flush();
                 game.TurnForward();
                 Thread.Sleep(100);
             }

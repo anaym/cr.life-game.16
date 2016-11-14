@@ -9,8 +9,12 @@ namespace CR_Life.After.Renderer
         public char AliveChar = 'o';
         public char DeadChar = '.';
 
+        public bool EveryCharFlush = false;
+        public bool EveryLineFlush = false;
+
         private readonly Cell leftBottom;
         private readonly Cell rightTop;
+
 
         public TextStreamRenderer(TextWriter writer, Cell leftBottom, Cell rightTop)
         {
@@ -25,6 +29,7 @@ namespace CR_Life.After.Renderer
             {
                 RenderLine(map, y);
                 Writer.WriteLine();
+                if (EveryLineFlush) Writer.Flush();
             }
         }
 
@@ -33,6 +38,7 @@ namespace CR_Life.After.Renderer
             for (int x = leftBottom.X; x <= rightTop.X; x++)
             {
                 Writer.Write(map.IsAlive(new Cell(x, y)) ? AliveChar : DeadChar);
+                if (EveryCharFlush) Writer.Flush();
             }
         }
     }
