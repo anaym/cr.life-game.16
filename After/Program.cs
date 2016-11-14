@@ -9,28 +9,24 @@ namespace CR_Life.After
     {
         public static void Main()
         {
-            var map = Map.Toroidal(new Cell(-5, -5), new Cell(5, 5))
-                //.InsertTo(Shape.Glider, new Cell(0, -10))
-                //.InsertTo(Shape.Blinker, new Cell(18, 6))
-                //.InsertTo(Shape.Beehive, new Cell(-21, 3))
-                .InsertTo(Shape.Box, new Cell(-6, -6))
-                ;
+            var width = Console.WindowWidth - 1;
+            var height = Console.WindowHeight - 1;
+
+            var map = Map.Toroidal(new Cell(-width/2, -height/2), new Cell(width/2, height/2))
+                .FillRandom(new Cell(-width/2, -height/2), new Cell(width/2, height/2));
 
             var game = new Game(map);
 
-            var renderer = new ConsoleRenderer(new Cell(-8, -8), new Cell(8, 8))
-            {
-                AliveChar = '█',
-                DeadChar = '-'
-            };
+            var renderer = new ConsoleRenderer(new Cell(-width/2, -height/2), new Cell(width/2, height/2));
 
             Console.CursorVisible = false;
             while (true)
             {
                 Console.SetCursorPosition(0, 0);
                 renderer.Render(game.CurrentMap);
+                Console.Title = game.CurrentMap.CountAliveCells.ToString();
                 game.TurnForward();
-                Console.ReadKey();
+                //Console.ReadKey();
                 Thread.Sleep(100);
             }
         }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace CR_Life.After
@@ -28,6 +29,16 @@ namespace CR_Life.After
                 }
                 y--;
             }
+            return map;
+        }
+
+        public static Map FillRandom(this Map map, Cell leftBottom, Cell rightTop)
+        {
+            var rnd = new Random();
+            for (int x = leftBottom.X; x <= rightTop.X; x++)
+                for (int y = leftBottom.Y; y <= rightTop.Y; y++)
+                    if (rnd.Next()%2 == 1)
+                        map = map.SetCellAlive(new Cell(x, y));
             return map;
         }
     }

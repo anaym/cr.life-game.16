@@ -61,15 +61,15 @@ namespace CR_Life.After
             if (!ToroidalSpace) return cell;
             var dx = cell.X - leftBottom.X;
             var dy = cell.Y - leftBottom.Y;
-            var x = dx % width + leftBottom.X;
-            var y = dy % height + leftBottom.Y;
+            var x = (dx % width + width)%width + leftBottom.X;
+            var y = (dy % height + height)%height + leftBottom.Y;
             return new Cell(x, y);
         }
 
         public Map Clone(IEnumerable<Cell> alive)
         {
             if (!ToroidalSpace) return new Map(alive);
-            return new Map(alive.ToImmutableHashSet(), leftBottom, new Cell(leftBottom.X + width, leftBottom.Y + height));
+            return new Map(alive.ToImmutableHashSet(), leftBottom, new Cell(leftBottom.X + width - 1, leftBottom.Y + height - 1));
         }
 
         public object Clone() => Clone(aliveCells);
