@@ -10,6 +10,7 @@ namespace CR_Life.After.Renderer
     {
         public ConsoleRenderer(Cell leftBottom, Cell rightTop) : base(Console.Out, leftBottom, rightTop)
         {
+            
         }
     }
 }

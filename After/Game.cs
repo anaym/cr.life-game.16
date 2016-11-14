@@ -7,6 +7,7 @@ namespace CR_Life.After
     public class Game
     {
         public Map CurrentMap { get; private set; }
+
         public Game(Map map)
         {
             CurrentMap = map;
@@ -16,11 +17,13 @@ namespace CR_Life.After
 
         public void TurnForward()
         {
-            CurrentMap = new Map(CurrentMap
+            CurrentMap = CurrentMap.Clone(CurrentMap
                 .AliveCells
                 .SelectMany(c => c.Nearest)
+                .Select(CurrentMap.TranslateCoordinates)
                 .Distinct()
-                .Where(c => GetNextState(CurrentMap.IsAlive(c), CurrentMap.CountNearestAliveCells(c))));
+                .Where(c => GetNextState(CurrentMap.IsAlive(c), CurrentMap.CountNearestAliveCells(c)))
+                .Select(CurrentMap.TranslateCoordinates));
         }
 
         public static bool GetNextState(bool currentState, int aliveCount)

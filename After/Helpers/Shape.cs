@@ -5,10 +5,16 @@ namespace CR_Life.After
     public class Shape
     {
         public static readonly Shape Glider;
+        public static readonly Shape Blinker;
+        public static readonly Shape Beehive;
+        public static readonly Shape Box;
 
         static Shape()
         {
-            Glider = new Shape(new Map().SetCellAlive(0, 0).SetCellAlive(1, 0).SetCellAlive(2, 0).SetCellAlive(2, 1).SetCellAlive(1, 2));    
+            Beehive = new Shape(new[] {".o.", "o.o", "o.o", ".o."}.ToMap());
+            Glider = new Shape(new[] {".o.", "..o", "ooo"}.ToMap());
+            Blinker = new Shape(new[] {"ooo"}.ToMap());
+            Box = new Shape(new[] {"oo", "oo"}.ToMap());
         }
 
         public readonly Map Cells;

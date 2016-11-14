@@ -33,3 +33,16 @@ C:\Users\Anton Tolstov\GitHub\sed\cr.life-game.16\bin\Debug\FluentAssertions.Cor
 C:\Users\Anton Tolstov\GitHub\sed\cr.life-game.16\bin\Debug\nunit.framework.xml
 C:\Users\Anton Tolstov\GitHub\sed\cr.life-game.16\bin\Debug\System.Collections.Immutable.xml
 C:\Users\Anton Tolstov\GitHub\sed\cr.life-game.16\obj\Debug\CR-Life.csprojResolveAssemblyReference.cache
+C:\Users\anaym_000\Documents\GitHub\cr.life-game.16\bin\Debug\CR-Life.exe
+C:\Users\anaym_000\Documents\GitHub\cr.life-game.16\bin\Debug\CR-Life.pdb
+C:\Users\anaym_000\Documents\GitHub\cr.life-game.16\bin\Debug\FluentAssertions.Core.dll
+C:\Users\anaym_000\Documents\GitHub\cr.life-game.16\bin\Debug\FluentAssertions.dll
+C:\Users\anaym_000\Documents\GitHub\cr.life-game.16\bin\Debug\nunit.framework.dll
+C:\Users\anaym_000\Documents\GitHub\cr.life-game.16\bin\Debug\System.Collections.Immutable.dll
+C:\Users\anaym_000\Documents\GitHub\cr.life-game.16\bin\Debug\FluentAssertions.pdb
+C:\Users\anaym_000\Documents\GitHub\cr.life-game.16\bin\Debug\FluentAssertions.xml
+C:\Users\anaym_000\Documents\GitHub\cr.life-game.16\bin\Debug\FluentAssertions.Core.pdb
+C:\Users\anaym_000\Documents\GitHub\cr.life-game.16\bin\Debug\FluentAssertions.Core.xml
+C:\Users\anaym_000\Documents\GitHub\cr.life-game.16\bin\Debug\nunit.framework.xml
+C:\Users\anaym_000\Documents\GitHub\cr.life-game.16\bin\Debug\System.Collections.Immutable.xml
+C:\Users\anaym_000\Documents\GitHub\cr.life-game.16\obj\Debug\CR-Life.csprojResolveAssemblyReference.cache
