@@ -17,13 +17,13 @@ namespace CR_Life.After
             Box = new Shape(new[] {"oo", "oo"}.ToMap());
         }
 
-        public readonly Map Cells;
-        public Shape(Map cells)
+        public readonly IMap Cells;
+        public Shape(IMap cells)
         {
             Cells = cells;
         }
 
-        public Map InsertTo(Map other, Cell position)
+        public IMap InsertTo(IMap other, Cell position)
         {
             return other.SetManyAlive(Cells.AliveCells.Select(c => new Cell(c.X + position.X, c.Y + position.Y)));
         }

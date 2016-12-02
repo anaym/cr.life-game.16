@@ -61,8 +61,6 @@ namespace CR_Life.After.Tests
                 .SetCellAlive(new Cell(324, 231));
             var firstSaved = first.AliveCells.ToList();
 
-            var second = first.SetCellDead(new Cell(10, 234));
-
             first.AliveCells.Should().BeEquivalentTo(firstSaved);
         }
     }

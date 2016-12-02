@@ -2,6 +2,6 @@
 {
     public interface IRenderer
     {
-        void Render(Map map);
+        void Render(IMap map);
     }
 }

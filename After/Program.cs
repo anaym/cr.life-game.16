@@ -12,7 +12,8 @@ namespace CR_Life.After
             var width = Console.WindowWidth - 1;
             var height = Console.WindowHeight - 1;
 
-            var map = Map.Toroidal(new Cell(-width/2, -height/2), new Cell(width/2, height/2))
+            var map = new ToroidalMap(new Rectangle(-width/2, height/2, width/2, -height/2))
+                //.InsertTo(Shape.Glider, new Cell(0, 0));
                 .FillRandom(new Cell(-width/2, -height/2), new Cell(width/2, height/2));
 
             var game = new Game(map);
@@ -24,7 +25,7 @@ namespace CR_Life.After
             {
                 Console.SetCursorPosition(0, 0);
                 renderer.Render(game.CurrentMap);
-                Console.Title = game.CurrentMap.CountAliveCells.ToString();
+                Console.Title = game.CurrentMap.CountAliveCells.ToString().PadRight(4, ' ') +  String.Concat(Enumerable.Repeat<char>('|', game.CurrentMap.CountAliveCells/10));
                 game.TurnForward();
                 //Console.ReadKey();
                 Thread.Sleep(100);

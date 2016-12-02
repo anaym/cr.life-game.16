@@ -59,6 +59,5 @@ namespace CR_Life.After.Tests
             game.TurnForward();
             game.CurrentMap.IsAlive(b).Should().Be(true);
         }
-
     }
 }

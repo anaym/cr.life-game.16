@@ -27,7 +27,7 @@ namespace CR_Life.After.Renderer
             this.rightTop = rightTop;
         }
 
-        public void Render(Map map)
+        public void Render(IMap map)
         {
             Console.Clear();
             for (int y = rightTop.Y; y >= leftBottom.Y; y--)
@@ -36,7 +36,7 @@ namespace CR_Life.After.Renderer
             }
         }
 
-        private void RenderLine(Map map, int y)
+        private void RenderLine(IMap map, int y)
         {
             for (int x = leftBottom.X; x <= rightTop.X; x++)
             {
