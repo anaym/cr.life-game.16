@@ -8,9 +8,6 @@ namespace CR_Life.After.Renderer
 {
     public class ConsoleRenderer : IRenderer
     {
-        private readonly Cell leftBottom;
-        private readonly Cell rightTop;
-
         public char RichAliveChar = 'O';
         public char PoorAliveChar = 'o';
         public char RichDeadChar = '.';
@@ -21,16 +18,17 @@ namespace CR_Life.After.Renderer
         public ConsoleColor RichDeadColor = ConsoleColor.DarkGray;
         public ConsoleColor PoorDeadColor = ConsoleColor.DarkGray;
 
-        public ConsoleRenderer(Cell leftBottom, Cell rightTop)
+        private readonly Rectangle rectangle;
+
+        public ConsoleRenderer(Rectangle rectangle)
         {
-            this.leftBottom = leftBottom;
-            this.rightTop = rightTop;
+            this.rectangle = rectangle;
         }
 
         public void Render(IMap map)
         {
             Console.Clear();
-            for (int y = rightTop.Y; y >= leftBottom.Y; y--)
+            for (int y = rectangle.Top; y >= rectangle.Bottom; y--)
             {
                 RenderLine(map, y);
             }
@@ -38,10 +36,10 @@ namespace CR_Life.After.Renderer
 
         private void RenderLine(IMap map, int y)
         {
-            for (int x = leftBottom.X; x <= rightTop.X; x++)
+            for (int x = rectangle.Left; x <= rectangle.Right; x++)
             {
-                var dx = x - leftBottom.X;
-                var dy = -y + rightTop.Y;
+                var dx = x - rectangle.Left;
+                var dy = -y + rectangle.Top;
                 if (dx < 0 || dy < 0) continue;
                 Console.SetCursorPosition(dx, dy);
 

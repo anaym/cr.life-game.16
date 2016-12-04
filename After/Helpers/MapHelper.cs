@@ -32,11 +32,11 @@ namespace CR_Life.After
             return map;
         }
 
-        public static IMap FillRandom(this IMap map, Cell leftBottom, Cell rightTop)
+        public static IMap FillRandom(this IMap map, Rectangle rect)
         {
             var rnd = new Random();
-            for (int x = leftBottom.X; x <= rightTop.X; x++)
-                for (int y = leftBottom.Y; y <= rightTop.Y; y++)
+            for (int x = rect.Left; x <= rect.Right; x++)
+                for (int y = rect.Bottom; y <= rect.Top; y++)
                     if (rnd.Next()%2 == 1)
                         map = map.SetCellAlive(new Cell(x, y));
             return map;
